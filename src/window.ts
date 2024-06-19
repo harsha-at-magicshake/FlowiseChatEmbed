@@ -3,7 +3,7 @@ type BotProps = {
   chatflowid: string;
   apiHost?: string;
   chatflowConfig?: Record<string, unknown>;
-  serverAPIHost: string,
+  serverAPIHost: string;
 };
 
 export const initFull = (props: BotProps & { id?: string }) => {

@@ -23,6 +23,7 @@ export type BotProps = {
     titleAvatarSrc?: string;
     fontSize?: number;
     isFullPage?: boolean;
+    serverAPIHost?: string;
 };
 export declare const Bot: (botProps: BotProps & {
     class?: string;
