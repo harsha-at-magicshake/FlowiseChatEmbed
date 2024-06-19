@@ -40,6 +40,7 @@ export type BotProps = {
   titleAvatarSrc?: string;
   fontSize?: number;
   isFullPage?: boolean;
+  serverAPIHost?: string;
 };
 
 const defaultWelcomeMessage = 'Hi there! How can I help?';
@@ -241,7 +242,7 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
 
     const result = await sendMessageQuery({
       chatflowid: props.chatflowid,
-      apiHost: props.apiHost,
+      apiHost: props.serverAPIHost,
       body,
     });
 
@@ -519,7 +520,7 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
             </div>
           </Show>
         </Show>
-        <Badge badgeBackgroundColor={props.badgeBackgroundColor} poweredByTextColor={props.poweredByTextColor} botContainer={botContainer} />
+        {/* <Badge badgeBackgroundColor={props.badgeBackgroundColor} poweredByTextColor={props.poweredByTextColor} botContainer={botContainer} /> */}
         <BottomSpacer ref={bottomSpacer} />
       </div>
       {sourcePopupOpen() && <Popup isOpen={sourcePopupOpen()} value={sourcePopupSrc()} onClose={() => setSourcePopupOpen(false)} />}
